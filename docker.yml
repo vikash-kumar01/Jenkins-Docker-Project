@@ -1,10 +1,10 @@
 - hosts: all
   tasks:
     - name: stop container
-      shell:  docker container stop rockstar
+      shell:  docker container stop rockstar-container                    #name of container 
     - name: remove container
-      shell: docker container rm rockstar
+      shell: docker container rm rockstar-container
     - name: remove docker image
-      shell: docker image rm vikashashoke/docker-job
+      shell: docker image rm vikashashoke/docker-job                            #name of images (docker images)
     - name: create new container
-      shell: docker container run -itd --name rockstar-container -p 9000:80 vikashashoke/docker-job
+      shell: docker container run -itd --name rockstar-container -p 9000:80 vikashashoke/docker-job     #(docker-job>> name of jenkins job)

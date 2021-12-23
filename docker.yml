@@ -1,0 +1,10 @@
+- hosts: all
+  tasks:
+    - name: stop container
+      shell:  docker container stop rockstar
+    - name: remove container
+      shell: docker container rm rockstar
+    - name: remove docker image
+      shell: docker image rm vikashashoke/docker-job
+    - name: create new container
+      shell: docker container run -itd --name rockstar-container -p 9000:80 vikashashoke/docker-job

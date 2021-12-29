@@ -1,4 +1,4 @@
-hosts: all
-tasks:
-  - name: create container
-    shell: docker container run -itd --name mydockercontainer -p 9000:80 vikashashoke/docker_image
+- hosts: all
+  tasks:
+   - name: create container
+     shell: docker container run -itd --name mydockercontainer -p 9000:80 vikashashoke/docker_image

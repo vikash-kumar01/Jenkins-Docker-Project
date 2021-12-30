@@ -1,4 +1,10 @@
 - hosts: all
   tasks:
-   - name: create container
+   - name: stop container
+     shell: docker container stop mydockercontainer
+   - name: remove container
+     shell: docker container rm mydockercontainer
+   - name: remove docker image
+     shell: docker image rmi vikashashoke/docker_image
+   - name: create new container
      shell: docker container run -itd --name mydockercontainer -p 9000:80 vikashashoke/docker_image

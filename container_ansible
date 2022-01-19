@@ -1,0 +1,13 @@
+master -->  apt update ; apt install python2 ansible openssh-client vim  -y
+            sudo apt-get install iputils-ping
+            
+node --> apt update ; apt install vim ssh python2 -y
+
+step2: set root passwd on both servers
+step 3:  set sshd confign to node 
+          then service ssh restart  & service ssh start
+          
+          
+step 5:  docker network inspect bridge  >> check in dockerhost both containers are in default bridge and try pinging node from dockerhost by node ip
+
+step 6: ssh-keygen master container then ssh-copy-id -i root@node_ip

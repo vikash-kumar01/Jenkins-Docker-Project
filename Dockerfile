@@ -1,5 +1,9 @@
 FROM  centos:latest
-MAINTAINER vikashashoke@gmail.com
+MAINTAINER aashiv173@gmail.com
+MAINTAINER aashiv173@gmail.com
+RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
+RUN yum update -y
 RUN yum install -y httpd \
  zip\
  unzip

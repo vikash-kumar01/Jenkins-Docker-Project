@@ -1,4 +1,4 @@
-FROM  centos:latest
+FROM  centos:8
 MAINTAINER jagannathan1906@gmail.com
 RUN yum makecache
 RUN yum install -y httpd zip unzip
